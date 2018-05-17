@@ -23,6 +23,7 @@ def forward(delay, num_steps):
         time.sleep(delay)
         setStep(0,1,0,0)
         time.sleep(delay)
+    setStep(0,0,0,0)
 
 def backward(delay, num_steps):
     for x in range(num_steps):
@@ -34,6 +35,7 @@ def backward(delay, num_steps):
         time.sleep(delay)
         setStep(1,0,1,0)
         time.sleep(delay)
+    setStep(0,0,0,0)
     
 def setStep(w1, w2, w3, w4):
   GPIO.output(pwm_a, w1)
