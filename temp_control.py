@@ -1,16 +1,14 @@
-import serial, string, time
+#!/usr/bin/python
+import serial
 import RPi.GPIO as GPIO
 
-output = " "
-ser = serial.Serial('/dev/ttyACM0', 9600, 8, 'N', 1, timeout = 1)
+ser = serial.Serial('/dev/ttyACM0', 9600)
 
-for i in range(0,256):
-	print unichr(i)
-	ser.write(chr(i))
-	time.sleep(1) 
-
-# if int(i) >= 230
-# 	GPIO.output(1, GPIO.LOW)
-# else 
-# 	GPIO.output(1, GPIO.HIGH)
-	
+try:
+	while True:
+		print ser.read(1000)
+except KeyboardInterrupt:
+	print "exiting..."
+finally:
+        ser.close()
+        exit

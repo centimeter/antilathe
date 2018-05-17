@@ -9,7 +9,7 @@ if __name__ == "__main__":
   x_dir = False
   #moves out a layer every time
   for shell in range(10):
-  	x_dir=!x_dir
+  	x_dir = not x_dir
   	#move to the right vaguely
   	for pos in range(100):
   		#spin the spindle
